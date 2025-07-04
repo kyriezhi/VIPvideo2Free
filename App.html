@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>⚡ 未来 · VIP 视频解析器 ⚡</title>
+  <style>
+    body {
+      margin: 0;
+      background: linear-gradient(135deg, #0f111a, #1a1d29);
+      color: #00f7ff;
+      font-family: Consolas, monospace;
+      text-align: center;
+    }
+    h1 {
+      margin-top: 50px;
+      font-size: 32px;
+      color: #00f7ff;
+      text-shadow: 0 0 10px #00f7ff;
+    }
+    .input-group {
+      margin: 50px auto;
+      width: 80%;
+      max-width: 600px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    input {
+      flex: 1;
+      padding: 12px 20px;
+      background-color: #1a1d29;
+      border: 2px solid #00f7ff;
+      color: #00ffcc;
+      font-size: 16px;
+      outline: none;
+      border-radius: 8px;
+      transition: border-color 0.3s;
+    }
+    input:focus {
+      border-color: #00ffcc;
+    }
+    button {
+      margin-left: 10px;
+      padding: 12px 30px;
+      background-color: #00f7ff;
+      border: none;
+      color: #0f111a;
+      font-size: 16px;
+      font-weight: bold;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.3s, transform 0.2s;
+      box-shadow: 0 0 20px #00f7ff;
+    }
+    button:hover {
+      background-color: #00ffcc;
+      transform: scale(1.05);
+    }
+    .footer {
+      margin-top: 50px;
+      color: #00ffcc;
+      font-size: 14px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>🧊 Play Anything You Want! 🧊</h1>
+
+  <div class="input-group">
+    <input type="text" id="videoUrl" placeholder="🎬 Paste your video URL here...">
+    <button onclick="playNow()">🚀 PLAY NOW 🚀</button>
+  </div>
+
+  <div class="footer">Channel: 唯一通道</div>
+
+  <script>
+    function playNow() {
+      const urlInput = document.getElementById('videoUrl').value.trim();
+      const reg = /^https?:\/\/\w.+$/;
+      if (reg.test(urlInput)) {
+        const playUrl = "https://jx.m3u8.tv/jx/jx.php?url=" + encodeURIComponent(urlInput);
+        window.open(playUrl, "_blank");
+      } else {
+        alert("❌ 视频地址无效，请检查....");
+      }
+    }
+  </script>
+
+</body>
+</html>
